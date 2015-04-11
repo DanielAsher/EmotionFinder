@@ -7,4 +7,7 @@
    <FileRef
       location = "group:EmotionFinderControl/EmotionFinderControl.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Modules/Cartography/Cartography.xcodeproj">
+   </FileRef>
 </Workspace>
