@@ -1,3 +1,6 @@
 [submodule "Modules/Cartography"]
 	path = Modules/Cartography
 	url = https://github.com/DanielAsher/Cartography.git
+[submodule "Modules/LTMorphingLabel"]
+	path = Modules/LTMorphingLabel
+	url = https://github.com/DanielAsher/LTMorphingLabel.git
