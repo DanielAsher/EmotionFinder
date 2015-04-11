@@ -1,0 +1,3 @@
+[submodule "Modules/Cartography"]
+	path = Modules/Cartography
+	url = https://github.com/DanielAsher/Cartography.git
