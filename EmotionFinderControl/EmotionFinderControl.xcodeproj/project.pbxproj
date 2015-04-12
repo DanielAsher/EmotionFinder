@@ -110,6 +110,8 @@
 		6559D5DB1AD9C56000F47170 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				6521CA9E1AD9E75F00BAB07A /* AngleGradient */,
+				65FF3FD71AD9BA260088DA90 /* LTMorphingLabel */,
 				6559D5D91AD9C55700F47170 /* Cartography.framework */,
 			);
 			name = Dependencies;
@@ -120,8 +122,6 @@
 			children = (
 				65A893EF1AD9A6CE001058FA /* EmotionFinderControl */,
 				65A893FC1AD9A6CE001058FA /* EmotionFinderControlTests */,
-				65FF3FD71AD9BA260088DA90 /* LTMorphingLabel */,
-				6521CA9E1AD9E75F00BAB07A /* AngleGradient */,
 				6559D5DB1AD9C56000F47170 /* Dependencies */,
 				65A893EE1AD9A6CE001058FA /* Products */,
 			);
@@ -139,7 +139,6 @@
 		65A893EF1AD9A6CE001058FA /* EmotionFinderControl */ = {
 			isa = PBXGroup;
 			children = (
-				65A893F21AD9A6CE001058FA /* EmotionFinderControl.h */,
 				65A893F01AD9A6CE001058FA /* Supporting Files */,
 				6556C9271AD9B63300F5EA69 /* EmotionFinder.swift */,
 				6556C9281AD9B63300F5EA69 /* EmotionFinder.xib */,
@@ -152,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				65A893F11AD9A6CE001058FA /* Info.plist */,
+				65A893F21AD9A6CE001058FA /* EmotionFinderControl.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
