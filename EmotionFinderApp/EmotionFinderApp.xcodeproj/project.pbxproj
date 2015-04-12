@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6556C9061AD9A81900F5EA69 /* EmotionFinderControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556C9031AD9A7E100F5EA69 /* EmotionFinderControl.framework */; };
+		655A99EE1AD9F54B0058DCA1 /* EmotionFinderControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556C9031AD9A7E100F5EA69 /* EmotionFinderControl.framework */; };
+		655A99F11AD9F86C0058DCA1 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655A99EF1AD9F8530058DCA1 /* Cartography.framework */; };
 		65A893C11AD9A6AC001058FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893C01AD9A6AC001058FA /* AppDelegate.swift */; };
 		65A893C41AD9A6AC001058FA /* EmotionFinderApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65A893C21AD9A6AC001058FA /* EmotionFinderApp.xcdatamodeld */; };
 		65A893C61AD9A6AC001058FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893C51AD9A6AC001058FA /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		6556C9031AD9A7E100F5EA69 /* EmotionFinderControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EmotionFinderControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		655A99EF1AD9F8530058DCA1 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A893BB1AD9A6AC001058FA /* EmotionFinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionFinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A893BF1AD9A6AC001058FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65A893C01AD9A6AC001058FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6556C9061AD9A81900F5EA69 /* EmotionFinderControl.framework in Frameworks */,
+				655A99F11AD9F86C0058DCA1 /* Cartography.framework in Frameworks */,
+				655A99EE1AD9F54B0058DCA1 /* EmotionFinderControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +67,7 @@
 		6556C9051AD9A7F300F5EA69 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				655A99EF1AD9F8530058DCA1 /* Cartography.framework */,
 				6556C9031AD9A7E100F5EA69 /* EmotionFinderControl.framework */,
 			);
 			name = Dependencies;
@@ -307,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -346,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
