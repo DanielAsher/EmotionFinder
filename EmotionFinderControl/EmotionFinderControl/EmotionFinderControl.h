@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AngleGradientLayer.h"
 
 //! Project version number for EmotionFinderControl.
 FOUNDATION_EXPORT double EmotionFinderControlVersionNumber;

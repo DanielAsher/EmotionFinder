@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6521CAA11AD9E75F00BAB07A /* AngleGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6521CA9F1AD9E75F00BAB07A /* AngleGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6521CAA21AD9E75F00BAB07A /* AngleGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6521CAA01AD9E75F00BAB07A /* AngleGradientLayer.m */; };
 		6556C9291AD9B63300F5EA69 /* EmotionFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556C9271AD9B63300F5EA69 /* EmotionFinder.swift */; };
 		6556C92A1AD9B63300F5EA69 /* EmotionFinder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6556C9281AD9B63300F5EA69 /* EmotionFinder.xib */; };
 		6559D5DC1AD9C57F00F47170 /* EmotionFinderControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893FF1AD9A6CE001058FA /* EmotionFinderControlTests.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6521CA9F1AD9E75F00BAB07A /* AngleGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AngleGradientLayer.h; sourceTree = "<group>"; };
+		6521CAA01AD9E75F00BAB07A /* AngleGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AngleGradientLayer.m; sourceTree = "<group>"; };
 		6556C9271AD9B63300F5EA69 /* EmotionFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionFinder.swift; sourceTree = "<group>"; };
 		6556C9281AD9B63300F5EA69 /* EmotionFinder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmotionFinder.xib; sourceTree = "<group>"; };
 		6559D5D91AD9C55700F47170 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +97,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6521CA9E1AD9E75F00BAB07A /* AngleGradient */ = {
+			isa = PBXGroup;
+			children = (
+				6521CA9F1AD9E75F00BAB07A /* AngleGradientLayer.h */,
+				6521CAA01AD9E75F00BAB07A /* AngleGradientLayer.m */,
+			);
+			name = AngleGradient;
+			path = ../Modules/AngleGradientLayer/AngleGradient;
+			sourceTree = "<group>";
+		};
 		6559D5DB1AD9C56000F47170 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +121,7 @@
 				65A893EF1AD9A6CE001058FA /* EmotionFinderControl */,
 				65A893FC1AD9A6CE001058FA /* EmotionFinderControlTests */,
 				65FF3FD71AD9BA260088DA90 /* LTMorphingLabel */,
+				6521CA9E1AD9E75F00BAB07A /* AngleGradient */,
 				6559D5DB1AD9C56000F47170 /* Dependencies */,
 				65A893EE1AD9A6CE001058FA /* Products */,
 			);
@@ -198,6 +213,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6521CAA11AD9E75F00BAB07A /* AngleGradientLayer.h in Headers */,
 				65A893F31AD9A6CE001058FA /* EmotionFinderControl.h in Headers */,
 				6568FAB91AD9BC6300DD02CC /* LTMorphingLabel.h in Headers */,
 			);
@@ -308,6 +324,7 @@
 				6568FAB71AD9BC6300DD02CC /* LTMorphingLabel+Pixelate.swift in Sources */,
 				6568FAB61AD9BC6300DD02CC /* LTMorphingLabel+Fall.swift in Sources */,
 				6568FAB01AD9BC6300DD02CC /* LTEasing.swift in Sources */,
+				6521CAA21AD9E75F00BAB07A /* AngleGradientLayer.m in Sources */,
 				6568FAB21AD9BC6300DD02CC /* LTMorphingEffect.swift in Sources */,
 				6568FABA1AD9BC6300DD02CC /* LTMorphingLabel.swift in Sources */,
 				6568FAB41AD9BC6300DD02CC /* LTMorphingLabel+Burn.swift in Sources */,
@@ -443,6 +460,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -461,6 +479,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

@@ -37,6 +37,17 @@ public class EmotionFinderView: UIControl {
             self.addSubview(label)
             topLevelEmotionLabels[emotion] = label
         }
+        
+        let l: AngleGradientLayer = self.layer as! AngleGradientLayer
+        let colors: Array<AnyObject> = [
+            UIColor(red: 1, green: 0, blue: 0, alpha: 1).CGColor,
+            UIColor(red: 1, green: 1, blue: 0, alpha: 1).CGColor,
+            UIColor(red: 0, green: 1, blue: 0, alpha: 1).CGColor,
+            UIColor(red: 0, green: 1, blue: 1, alpha: 1).CGColor,
+            UIColor(red: 1, green: 0, blue: 1, alpha: 1).CGColor,
+            UIColor(red: 1, green: 0, blue: 0, alpha: 1).CGColor]
+        l.colors = colors
+        l.cornerRadius = CGRectGetWidth(self.bounds) / 2
     }
     
     public override func layoutSubviews() {
@@ -63,5 +74,9 @@ public class EmotionFinderView: UIControl {
                 }
             }
         }
+    }
+    
+    override public class func layerClass() -> AnyClass {
+        return AngleGradientLayer.self
     }
 }
