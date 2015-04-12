@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		655A99EE1AD9F54B0058DCA1 /* EmotionFinderControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556C9031AD9A7E100F5EA69 /* EmotionFinderControl.framework */; };
-		655A99F11AD9F86C0058DCA1 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655A99EF1AD9F8530058DCA1 /* Cartography.framework */; };
+		654ECDEA1ADA02BF008EE147 /* EmotionFinderControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556C9031AD9A7E100F5EA69 /* EmotionFinderControl.framework */; };
+		654ECDEB1ADA02BF008EE147 /* EmotionFinderControl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6556C9031AD9A7E100F5EA69 /* EmotionFinderControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		654ECDED1ADA02C4008EE147 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655A99EF1AD9F8530058DCA1 /* Cartography.framework */; };
+		654ECDEE1ADA02C4008EE147 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 655A99EF1AD9F8530058DCA1 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65A893C11AD9A6AC001058FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893C01AD9A6AC001058FA /* AppDelegate.swift */; };
 		65A893C41AD9A6AC001058FA /* EmotionFinderApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65A893C21AD9A6AC001058FA /* EmotionFinderApp.xcdatamodeld */; };
 		65A893C61AD9A6AC001058FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A893C51AD9A6AC001058FA /* ViewController.swift */; };
@@ -27,6 +29,21 @@
 			remoteInfo = EmotionFinderApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		654ECDEC1ADA02BF008EE147 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				654ECDEB1ADA02BF008EE147 /* EmotionFinderControl.framework in Embed Frameworks */,
+				654ECDEE1ADA02C4008EE147 /* Cartography.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6556C9031AD9A7E100F5EA69 /* EmotionFinderControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EmotionFinderControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,8 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				655A99F11AD9F86C0058DCA1 /* Cartography.framework in Frameworks */,
-				655A99EE1AD9F54B0058DCA1 /* EmotionFinderControl.framework in Frameworks */,
+				654ECDEA1ADA02BF008EE147 /* EmotionFinderControl.framework in Frameworks */,
+				654ECDED1ADA02C4008EE147 /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +158,7 @@
 				65A893B71AD9A6AC001058FA /* Sources */,
 				65A893B81AD9A6AC001058FA /* Frameworks */,
 				65A893B91AD9A6AC001058FA /* Resources */,
+				654ECDEC1ADA02BF008EE147 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
