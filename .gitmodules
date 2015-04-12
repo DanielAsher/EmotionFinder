@@ -4,3 +4,6 @@
 [submodule "Modules/LTMorphingLabel"]
 	path = Modules/LTMorphingLabel
 	url = https://github.com/DanielAsher/LTMorphingLabel.git
+[submodule "Modules/AngleGradientLayer"]
+	path = Modules/AngleGradientLayer
+	url = https://github.com/DanielAsher/AngleGradientLayer.git
