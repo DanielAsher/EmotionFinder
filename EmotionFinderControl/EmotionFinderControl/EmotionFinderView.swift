@@ -12,10 +12,26 @@ import Darwin
 
 @IBDesignable
 public class EmotionFinderView: UIControl {
-    let centreEmotion = "Calm"
+    
+    let centreEmotion = "Emote"
     let topLevelEmotions = ["Peaceful", "Mad", "Sad", "Scared", "Joyful", "Powerful"]
     let centreEmotionLabel : LTMorphingLabel
     var topLevelEmotionLabels : [String: LTMorphingLabel] = [:]
+    
+    var initialAlpha: CGFloat  { return CGFloat(0.1) }
+    
+    var startColor : UIColor  {return UIColor(red: 1, green: 0, blue: 0, alpha: initialAlpha)}
+    var colors: [UIColor] { return [
+        startColor,
+        UIColor(red: 1, green: 1, blue: 0, alpha: initialAlpha),
+        UIColor(red: 0, green: 1, blue: 0, alpha: initialAlpha),
+        UIColor(red: 0, green: 1, blue: 1, alpha: initialAlpha),
+        UIColor(red: 1, green: 0, blue: 1, alpha: initialAlpha),
+        UIColor(red: 1, green: 0, blue: 0, alpha: initialAlpha),
+        startColor] }
+    
+    var radials : [GradientView] = []
+    
     override init(frame: CGRect) {
         centreEmotionLabel = LTMorphingLabel()
         centreEmotionLabel.textAlignment = NSTextAlignment.Center
@@ -32,25 +48,28 @@ public class EmotionFinderView: UIControl {
     func setup() {
         centreEmotionLabel.text = centreEmotion
         self.addSubview(centreEmotionLabel)
-        for emotion in topLevelEmotions {
+        for (i, emotion) in enumerate(topLevelEmotions) {
+            
             let label = LTMorphingLabel()
             label.text = emotion
             label.textAlignment = NSTextAlignment.Center
 
-            self.addSubview(label)
             topLevelEmotionLabels[emotion] = label
+
+            self.addSubview(label)
+            
+            let radial = GradientView()
+            radial.backgroundColor = UIColor.clearColor()
+            radial.colors = [colors[i], UIColor.clearColor()]
+//            radial.mode = .Linear
+            radials.append(radial)
+            self.addSubview(radial)
+            
         }
         
-        let initialAlpha = CGFloat(0.1)
-        let l: AngleGradientLayer = self.layer as! AngleGradientLayer
-        let colors: Array<AnyObject> = [
-            UIColor(red: 1, green: 0, blue: 0, alpha: initialAlpha).CGColor,
-            UIColor(red: 1, green: 1, blue: 0, alpha: initialAlpha).CGColor,
-            UIColor(red: 0, green: 1, blue: 0, alpha: initialAlpha).CGColor,
-            UIColor(red: 0, green: 1, blue: 1, alpha: initialAlpha).CGColor,
-            UIColor(red: 1, green: 0, blue: 1, alpha: initialAlpha).CGColor,
-            UIColor(red: 1, green: 0, blue: 0, alpha: initialAlpha).CGColor]
-        l.colors = colors
+//        let l: AngleGradientLayer = self.layer as! AngleGradientLayer
+//
+//        l.colors = colors
 //        l.cornerRadius = CGRectGetWidth(self.bounds) / 2
     }
     
@@ -79,16 +98,27 @@ public class EmotionFinderView: UIControl {
                     label.width == size.width
                     label.height == size.height
                 }
+                let radial = radials[i]
+                radial.colors = [colors[i], UIColor.clearColor()]
+//                radial.colors = [UIColor.redColor(), UIColor.clearColor()]
+
+                radial.mode = .Radial
+                layout(label, radial) { label, radial in
+                    radial.centerX == label.centerX
+                    radial.centerY == label.centerY
+                    radial.width == self.frame.width
+                    radial.height == self.frame.height
+                }
             }
             
-            let l: AngleGradientLayer = self.layer as! AngleGradientLayer
-           l.locations = angles
+//            let l: AngleGradientLayer = self.layer as! AngleGradientLayer
+//           l.locations = angles
         }
     }
     
-    override public class func layerClass() -> AnyClass {
-        return AngleGradientLayer.self
-    }
+//    override public class func layerClass() -> AnyClass {
+//        return AngleGradientLayer.self
+//    }
     
     public override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         return
@@ -103,41 +133,43 @@ public class EmotionFinderView: UIControl {
         if let touch = touches.first as? UITouch {
             
             let location = touch.locationInView(self)
-            let initialAlpha = CGFloat(0.1)
-            let startColor = UIColor(red: 0, green: 1, blue: 1, alpha: initialAlpha)
-            var colors: Array<AnyObject> = [
-                startColor,
-                UIColor(red: 1, green: 0, blue: 0, alpha: initialAlpha),
-                UIColor(red: 0, green: 0, blue: 1, alpha: initialAlpha),
-                UIColor(red: 1, green: 0, blue: 1, alpha: initialAlpha),
-                UIColor(red: 1, green: 1, blue: 0, alpha: initialAlpha),
-                UIColor(red: 0, green: 1, blue: 0, alpha: initialAlpha),
-                startColor,
-            ]
+//            let initialAlpha = CGFloat(0.1)
+//            let startColor = UIColor(red: 0, green: 1, blue: 1, alpha: initialAlpha)
+//            var colors: Array<AnyObject> = [
+//                startColor,
+//                UIColor(red: 1, green: 0, blue: 0, alpha: initialAlpha),
+//                UIColor(red: 0, green: 0, blue: 1, alpha: initialAlpha),
+//                UIColor(red: 1, green: 0, blue: 1, alpha: initialAlpha),
+//                UIColor(red: 1, green: 1, blue: 0, alpha: initialAlpha),
+//                UIColor(red: 0, green: 1, blue: 0, alpha: initialAlpha),
+//                startColor,
+//            ]
             
             for (i, (emotion, label)) in enumerate(topLevelEmotionLabels) {
                 let centre = CGPoint(x: label.frame.midX, y: label.frame.midY)
                 let distance = distanceBetween(centre, location)
-                println("== \(i): \(distance)")
-
-                let c = colors[i] as! UIColor
+//                println("== \(i): \(distance)")
+//
+                let color = colors[i]
                 var r: CGFloat = 0
                 var g: CGFloat = 0
                 var b: CGFloat = 0
                 var a: CGFloat = 0
-                c.getRed(&r, green: &g, blue: &b, alpha: &a)
+                color.getRed(&r, green: &g, blue: &b, alpha: &a)
                 let newAlpha = max(a, 1.0 / max(0.2 * distance, 1.0))
-                println(newAlpha)
-                println()
-                colors[i] = UIColor(red: r, green: g, blue: b, alpha: newAlpha).CGColor
+//                println(newAlpha)
+                let radial = radials[i]
+                let newColor = UIColor(red: r, green: g, blue: b, alpha: newAlpha)
+                radial.colors = [newColor, UIColor.clearColor()]
+//                colors[i] = UIColor(red: r, green: g, blue: b, alpha: newAlpha).CGColor
             }
 
-            let l: AngleGradientLayer = self.layer as! AngleGradientLayer
+//            let l: AngleGradientLayer = self.layer as! AngleGradientLayer
 
-            l.setNeedsDisplay()
+//            l.setNeedsDisplay()
 
-            l.colors = colors
-            println(l.locations)
+//            l.colors = colors
+//            println(l.locations)
 
 
         }
