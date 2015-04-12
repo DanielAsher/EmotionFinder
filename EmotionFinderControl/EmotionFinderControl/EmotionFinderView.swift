@@ -80,4 +80,17 @@ public class EmotionFinderView: UIControl {
     override public class func layerClass() -> AnyClass {
         return AngleGradientLayer.self
     }
+    
+    public override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        return
+    }
+    public override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        return
+    }
+    public override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        return
+    }
+    public override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+        return
+    }
 }
