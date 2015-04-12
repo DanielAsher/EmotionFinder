@@ -18,6 +18,16 @@ public class EmotionFinderView: UIControl {
     let centreEmotionLabel : LTMorphingLabel
     var topLevelEmotionLabels : [String: LTMorphingLabel] = [:]
     
+    var secondLevelEmotions : [String: [String]] =
+            ["Peaceful" : ["Content", "Thoughtful"],
+            "Mad"       : ["Hurt", "Hostile"],
+            "Sad"        : ["Guily", "Ashamed"],
+            "Scared"   : ["Rejected", "Helpless"],
+            "Joyful"     : ["Playful", "Sexy"],
+            "Powerful" : ["Proud", "Hopeful"]]
+
+    var secondLevelEmotionLabels : [String : [String: LTMorphingLabel]] = [:]
+    
     var initialAlpha: CGFloat  { return CGFloat(0.1) }
     
     var startColor : UIColor  {return UIColor(red: 1, green: 0, blue: 0, alpha: initialAlpha)}
@@ -109,6 +119,11 @@ public class EmotionFinderView: UIControl {
                     radial.width == self.frame.width
                     radial.height == self.frame.height
                 }
+                
+//                for (i, (emotion, subemotions)) in secondLevelEmotionLabels {
+//                    
+//                }
+                
             }
             
 //            let l: AngleGradientLayer = self.layer as! AngleGradientLayer
