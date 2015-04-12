@@ -38,14 +38,15 @@ public class EmotionFinderView: UIControl {
             topLevelEmotionLabels[emotion] = label
         }
         
+        let initialAlpha = CGFloat(0.1)
         let l: AngleGradientLayer = self.layer as! AngleGradientLayer
         let colors: Array<AnyObject> = [
-            UIColor(red: 1, green: 0, blue: 0, alpha: 1).CGColor,
-            UIColor(red: 1, green: 1, blue: 0, alpha: 1).CGColor,
-            UIColor(red: 0, green: 1, blue: 0, alpha: 1).CGColor,
-            UIColor(red: 0, green: 1, blue: 1, alpha: 1).CGColor,
-            UIColor(red: 1, green: 0, blue: 1, alpha: 1).CGColor,
-            UIColor(red: 1, green: 0, blue: 0, alpha: 1).CGColor]
+            UIColor(red: 1, green: 0, blue: 0, alpha: initialAlpha).CGColor,
+            UIColor(red: 1, green: 1, blue: 0, alpha: initialAlpha).CGColor,
+            UIColor(red: 0, green: 1, blue: 0, alpha: initialAlpha).CGColor,
+            UIColor(red: 0, green: 1, blue: 1, alpha: initialAlpha).CGColor,
+            UIColor(red: 1, green: 0, blue: 1, alpha: initialAlpha).CGColor,
+            UIColor(red: 1, green: 0, blue: 0, alpha: initialAlpha).CGColor]
         l.colors = colors
         l.cornerRadius = CGRectGetWidth(self.bounds) / 2
     }
